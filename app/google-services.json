@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "108521661240",
+    "firebase_url": "https://wherehotel-216c7.firebaseio.com",
+    "project_id": "wherehotel-216c7",
+    "storage_bucket": "wherehotel-216c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108521661240:android:828022b14a6b7049",
+        "android_client_info": {
+          "package_name": "com.androidteam.wherehotel.wherehotel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "108521661240-84jnpn2ttdvghlupthpak7fckv5btgmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCr7HlJb8I5vdVG_Z3wyApKfO2C2xYnFI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

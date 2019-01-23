@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFF">
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:background="#076972"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_home"/>
+
+        <TextView
+            android:textColor="#ffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WhereHotel"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/toolbar"
+        android:src="@drawable/hotellogo"/>
+    <TextView
+        android:id="@+id/textforget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:text="@string/forgot"
+        android:textSize="15dp"
+        android:textColor="#076972"
+        android:layout_marginRight="20dp"/>
+    <LinearLayout
+        android:layout_below="@+id/textforget"
+        android:paddingTop="20dp"
+        android:id="@+id/facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <Button
+            android:id="@+id/btnfacebook"
+            android:layout_width="match_parent"
+            android:paddingLeft="20dp"
+            android:layout_height="60dp"
+            android:drawablePadding="20dp"
+            android:background="@drawable/shadowfb"
+            android:drawableLeft="@drawable/facebook"
+            android:text="@string/signfb"
+            android:textAlignment="textStart"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/facebook"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shadow"
+            android:drawableLeft="@drawable/google"
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:text="@string/signgg"
+            android:textAlignment="textStart"
+            android:textColor="#707070"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>
