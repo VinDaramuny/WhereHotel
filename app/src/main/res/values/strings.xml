@@ -7,10 +7,5 @@
         <string name="forgot">Forgot Password?</string>
         <string name="signfb">SIGN IN WITH FACEBOOK</string>
         <string name="signgg">SIGN IN WITH GOOGLE</string>
-        <string name="facebook_app_id">TU_ID_APP</string>
-        <string name="welcome">welcome</string>
-        <string name="cancel_login">cancel</string>
-        <string name="error_login">error</string>
-        <string name="logout">logout</string>
-        <string name="firebase_error_login">errorloginwithfirebase</string>
+        <string name="google_map_api_key" translatable="false">AIzaSyBfbuqgmwifzgMtdLK9rf4DV0grGTzEXtQ</string>
 </resources>
