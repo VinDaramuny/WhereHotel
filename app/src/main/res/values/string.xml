@@ -8,4 +8,12 @@
     <string name="signfb" translatable="false">SIGN IN WITH FACEBOOK</string>
     <string name="signgg" translatable="false">SIGN IN WITH GOOGLE</string>
     <string name="google_map_api_key" translatable="false">AIzaSyBfbuqgmwifzgMtdLK9rf4DV0grGTzEXtQ</string>
+    <string name="text_translation">Hi and welcome to codingdemos,
+        here you will learn how to develop android app. Thank you for watching</string>
+
+    <string-array name="language_option">
+        <item>English</item>
+        <item>Khmer</item>
+        <item>Korean</item>
+    </string-array>
 </resources>
