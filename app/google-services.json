@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "108521661240",
-    "firebase_url": "https://wherehotel-216c7.firebaseio.com",
-    "project_id": "wherehotel-216c7",
-    "storage_bucket": "wherehotel-216c7.appspot.com"
+    "project_number": "701289868638",
+    "firebase_url": "https://wherehotel-68ebe.firebaseio.com",
+    "project_id": "wherehotel-68ebe",
+    "storage_bucket": "wherehotel-68ebe.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:108521661240:android:828022b14a6b7049",
+        "mobilesdk_app_id": "1:701289868638:android:828022b14a6b7049",
         "android_client_info": {
           "package_name": "com.androidteam.wherehotel.wherehotel"
         }
       },
       "oauth_client": [
         {
-          "client_id": "108521661240-84jnpn2ttdvghlupthpak7fckv5btgmu.apps.googleusercontent.com",
+          "client_id": "701289868638-t7dko623369717fii19rcg17hv1s7dhd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.androidteam.wherehotel.wherehotel",
+            "certificate_hash": "8089196b2dd19b3dbc126865a36bfff8c4978445"
+          }
+        },
+        {
+          "client_id": "701289868638-m34qi17b470rmvdicbes0j3rs66imhou.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBCr7HlJb8I5vdVG_Z3wyApKfO2C2xYnFI"
+          "current_key": "AIzaSyDWZTUE4i3C-RQ68LFjbvEhnCNtL3jLU6Q"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701289868638-m34qi17b470rmvdicbes0j3rs66imhou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

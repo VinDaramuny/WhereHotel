@@ -19,12 +19,15 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -33,6 +36,7 @@ public class SignInActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     CallbackManager callbackManager;
     LoginButton loginButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,27 +74,69 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
-    private void handleFacebookAccessToken(AccessToken accessToken) {
-        AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
-        firebaseAuth.signInWithCredential(credential).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(SignInActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e("ERROR_EDMT",""+e.getMessage());
-            }
-        }).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                String email = authResult.getUser().getEmail();
-                Toast.makeText(SignInActivity.this, "Email :"+email, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private void handleFacebookAccessToken(AccessToken accessToken) {
+//        AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
+//        firebaseAuth.signInWithCredential(credential).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(SignInActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+//                Log.e("ERROR_EDMT",""+e.getMessage());
+//            }
+//        }).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//            @Override
+//            public void onSuccess(AuthResult authResult) {
+//                String email = authResult.getUser().getEmail();
+//                Toast.makeText(SignInActivity.this, "Email :"+email, Toast.LENGTH_SHORT).show();
+//                //startActivity(intent);
+//
+//
+//            }
+//        });
+//    }
+    private void handleFacebookAccessToken(AccessToken token) {
+        //Log.d(TAG, "handleFacebookAccessToken:" + token);
 
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            //Log.d(TAG, "signInWithCredential:success");
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            //Log.w(TAG, "signInWithCredential:failure", task.getException());
+
+                            updateUI(null);
+                        }
+
+                        // ...
+                    }
+                });
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode,resultCode,data);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        Toast.makeText(this, ""+currentUser, Toast.LENGTH_SHORT).show();
+        updateUI(currentUser);
+    }
+
+    private void updateUI(FirebaseUser user) {
+        if(user!= null) {
+            Intent intent = new Intent(this, HotelListActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void printKeyHash() {
