@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WhereHotel</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="signin" translatable="false">SIGN IN</string>
+    <string name="registor" translatable="false">REGISTER</string>
+    <string name="forgot" translatable="false">Forgot Password?</string>
+    <string name="signfb" translatable="false">SIGN IN WITH FACEBOOK</string>
+    <string name="signgg" translatable="false">SIGN IN WITH GOOGLE</string>
+    <string name="google_map_api_key" translatable="false">AIzaSyBfbuqgmwifzgMtdLK9rf4DV0grGTzEXtQ</string>
+</resources>
