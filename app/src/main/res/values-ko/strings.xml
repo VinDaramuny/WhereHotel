@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WhereHotel</string>
+    <string name="email">អ៊ីមែល</string>
+    <string name="password">ពាក្យសម្ងាត់</string>
+    <string name="signin">ចូល</string>
+    <string name="registor">ចុះឈ្មោះ</string>
+    <string name="forgot">ភ្លេច​លេខសំងាត់?</string>
+    <string name="signfb">ចូល តាម FACEBOOK</string>
+    <string name="signgg">ចូល​ តាម GOOGLE</string>
+    <string name="text_translation">안녕하세요.</string>
+
+    <string-array name="language_option">
+        <item>English</item>
+        <item>Khmer</item>
+        <item>Korean</item>
+    </string-array>
+
+</resources>
