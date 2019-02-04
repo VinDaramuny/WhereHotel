@@ -1,6 +1,8 @@
 package com.androidteam.wherehotel.wherehotel;
 
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 public class Hotel {
@@ -60,5 +62,9 @@ public class Hotel {
 
     public void setHotelLocation(String hotelLocation) {
         this.hotelLocation = hotelLocation;
+    }
+
+    public void print(){
+        Log.d("HOTEL", getHotelName());
     }
 }

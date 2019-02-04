@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/parentLayout">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        android:padding="4dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="#FCE4EC"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:id="@+id/imageViewImg"
+                android:src="@drawable/hotel_sample"
+                android:background="#FFFF"
+                android:scaleType="fitCenter"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel name"
+                    android:textColor="#00796B"
+                    android:textSize="24sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/textViewName"
+                    android:layout_alignParentStart="true"
+
+                    />
+
+                <TextView
+                    android:id="@+id/textViewPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="$00.00"
+                    android:textColor="#FF0000"
+                    android:textSize="22sp" />
+            </RelativeLayout>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#4DB6AC"
+                android:text="location"
+                android:id="@+id/textViewLocation"
+                android:textSize="18sp"/>
+                <!--android:layout_below="@+id/textViewName"-->
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#086A73"
+                android:text="View detail"
+                android:textColor="#FFFF"
+                />
+                <!--//android:layout_below="@+id/textViewLocation"-->
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
