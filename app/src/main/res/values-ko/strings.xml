@@ -8,7 +8,8 @@
     <string name="forgot">ភ្លេច​លេខសំងាត់?</string>
     <string name="signfb">ចូល តាម FACEBOOK</string>
     <string name="signgg">ចូល​ តាម GOOGLE</string>
-    <string name="text_translation">សួស្តីនិងស្វាគមន៍</string>
+    <string name="text_translation">안녕하세요.</string>
+
     <string-array name="language_option">
         <item>English</item>
         <item>Khmer</item>
