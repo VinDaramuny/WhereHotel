@@ -53,11 +53,6 @@ public class MainActivity extends AppCompatActivity {
                         resources = context.getResources();
                         mTextView.setText(resources.getString(R.string.text_translation));
                         break;
-                    case 2:
-                        context = LocaleHelper.setLocale(MainActivity.this, "ko");
-                        resources = context.getResources();
-                        mTextView.setText(resources.getString(R.string.text_translation));
-                        break;
                 }
             }
 
