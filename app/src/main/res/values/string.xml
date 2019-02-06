@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="facebook_app_id">295883587945689</string>
     <string name="fb_login_protocol_scheme">fb295883587945689</string>
+    
     <string name="app_name">WhereHotel</string>
     <string name="email" translatable="false">Email</string>
     <string name="password" translatable="false">Password</string>
@@ -13,6 +13,7 @@
     <string name="google_map_api_key" translatable="false">AIzaSyBfbuqgmwifzgMtdLK9rf4DV0grGTzEXtQ</string>
     <string name="text_translation">Hi and welcome to codingdemos,
         here you will learn how to develop android app. Thank you for watching</string>
+
     <string-array name="language_option">
         <item>English</item>
         <item>Khmer</item>
