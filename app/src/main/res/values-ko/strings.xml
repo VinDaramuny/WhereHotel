@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="facebook_app_id">295883587945689</string>
+    <string name="fb_login_protocol_scheme">fb295883587945689</string>
+
     <string name="app_name">WhereHotel</string>
     <string name="email">អ៊ីមែល</string>
     <string name="password">ពាក្យសម្ងាត់</string>
