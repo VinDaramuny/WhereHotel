@@ -17,6 +17,8 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,8 +31,12 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.json.JSONObject;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import java.util.List;
 
 public class SignInActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
@@ -47,6 +53,15 @@ public class SignInActivity extends AppCompatActivity {
 
         loginButton = findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
+
+
+        List<String> permissionNeeds = Arrays.asList(
+                "public_profile", "email", "user_birthday", "user_friends");
+
+        loginButton.setReadPermissions(permissionNeeds);
+
+
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,13 +142,14 @@ public class SignInActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-        Toast.makeText(this, ""+currentUser, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+currentUser.getDisplayName(), Toast.LENGTH_SHORT).show();
         updateUI(currentUser);
     }
 
     private void updateUI(FirebaseUser user) {
         if(user!= null) {
             Intent intent = new Intent(this, HotelListActivity.class);
+
             startActivity(intent);
             finish();
         }
