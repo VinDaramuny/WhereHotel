@@ -88,12 +88,12 @@
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                         android:textStyle="bold" />
                     <Button
-                        android:id="@+id/textViewLocations"
+                        android:id="@+id/btn_map"
                         android:layout_width="match_parent"
                         android:layout_below="@+id/textViewPrice"
                         android:layout_height="30dp"
                         android:background="#086A73"
-                        android:text="View detail"
+                        android:text="View on map"
                         android:textColor="#FFFF"
                         />
 

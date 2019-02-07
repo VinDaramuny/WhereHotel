@@ -1,15 +1,18 @@
 package com.androidteam.wherehotel.wherehotel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
@@ -28,6 +31,8 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
         ImageView hotelImg;
         TextView hotelPrice;
         TextView hotelLocation;
+        TextView hotelRating;
+        Button button;
         public ViewHolder(View itemView){
             super(itemView);
             hotelName = itemView.findViewById(R.id.textViewName);
@@ -35,7 +40,8 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
             hotelImg = itemView.findViewById(R.id.imageViewImg);
             hotelPrice = itemView.findViewById(R.id.textViewPrice);
             hotelLocation = itemView.findViewById(R.id.textViewLocation);
-
+            hotelRating = itemView.findViewById(R.id.textViewRating);
+            button = itemView.findViewById(R.id.btn_map);
         }
 
 
@@ -54,16 +60,23 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
         holder.hotelName.setText(hotel.getHotelName());
         holder.hotelPrice.setText(hotel.getHotelPrice());
         Glide.with(context).asBitmap().load(hotel.getHotelImg()).into(holder.hotelImg);
-        holder.hotelLocation.setText(getGeo(hotel.getHotelLocation()));
+        holder.hotelLocation.setText(hotel.getHotelLocation());
+        holder.hotelRating.setText(hotel.getHotelRating());
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,MapActivity.class);
+                intent.putExtra("latlong",hotel.getLatLong());
+
+
+                context.startActivity(intent);
+            }
+        });
         //Glide.with(mContext).asBitmap().load(product.getImgUrl()).into(holder.productImg);
 
     }
 
-    private String getGeo(String location) {
-        String geoCode = " no location yet";
 
-        return geoCode;
-    }
 
     @Override
     public int getItemCount() {

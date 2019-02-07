@@ -3,6 +3,7 @@ package com.androidteam.wherehotel.wherehotel;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -39,15 +42,51 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private FusedLocationProviderClient locationProviderClient;
     private Marker userMarker;
+    private String[] latlng;
+    private double latitude;
+    private double longtitude;
+    Hotel hotel;
+    String tmp;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        Intent getHotel = getIntent();
+
+        tmp = getHotel.getStringExtra("latlong");
+        latlng = tmp.split(",");
+
+        latitude = Double.parseDouble(latlng[0]);
+        longtitude = Double.parseDouble(latlng[1]);
+
+
+
+
+        setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         mapView = findViewById(R.id.map_view);
         mapView.onCreate(savedInstanceState);
         // Load map object
         mapView.getMapAsync(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -74,7 +113,22 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
-        loadUserCurrentLocation();
+        LatLng location = new LatLng(latitude, longtitude);
+        googleMap.addMarker(new MarkerOptions().position(location).snippet("TEXT BELLOW TITLE").title("TITLE")).showInfoWindow();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        googleMap.setMyLocationEnabled(true);
+        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15));
+        //loadUserCurrentLocation();
     }
 
     @Override

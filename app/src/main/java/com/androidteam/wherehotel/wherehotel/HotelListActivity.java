@@ -120,6 +120,7 @@ public class HotelListActivity extends AppCompatActivity implements NavigationVi
                 Hotel hotel = dataSnapshot.getValue(Hotel.class);
                 int index = getItemIndex(hotel);
                 hotelList.set(index,hotel);
+                hotelAdapter.notifyDataSetChanged();
             }
 
             @Override
