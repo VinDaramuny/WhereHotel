@@ -67,7 +67,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
             public void onClick(View v) {
                 Intent intent = new Intent(context,MapActivity.class);
                 intent.putExtra("latlong",hotel.getLatLong());
-
+                //intent.putExtra("test", (Serializable) hotel);
 
                 context.startActivity(intent);
             }

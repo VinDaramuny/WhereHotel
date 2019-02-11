@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -61,7 +62,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         latitude = Double.parseDouble(latlng[0]);
         longtitude = Double.parseDouble(latlng[1]);
-
+        //hotel = (Hotel)getHotel.getSerializableExtra("test");
+        Log.d("OPENIT",hotel.getHotelName());
 
 
 
@@ -114,6 +116,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
         LatLng location = new LatLng(latitude, longtitude);
+
         googleMap.addMarker(new MarkerOptions().position(location).snippet("TEXT BELLOW TITLE").title("TITLE")).showInfoWindow();
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
