@@ -93,11 +93,19 @@
                         android:layout_below="@+id/textViewPrice"
                         android:layout_height="30dp"
                         android:background="#086A73"
-                        android:text="View on map"
+                        android:text="@string/viewmap"
                         android:textColor="#FFFF"
                         />
 
                 </RelativeLayout>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/text_translation"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp" />
 
             </android.support.v7.widget.CardView>
 

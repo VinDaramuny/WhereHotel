@@ -11,6 +11,9 @@
     <string name="signfb">ចូល តាម FACEBOOK</string>
     <string name="signgg">ចូល​ តាម GOOGLE</string>
     <string name="text_translation">សួស្តីនិងស្វាគមន៍</string>
+    <string name="english">អង់គ្លេស</string>
+    <string name="khmer">ខ្មែរ</string>
+    <string name="viewmap">មើលនៅលើផែនទី</string>
     <string-array name="language_option">
         <item>English</item>
         <item>Khmer</item>

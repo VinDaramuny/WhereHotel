@@ -13,6 +13,9 @@
     <string name="google_map_api_key" translatable="false">AIzaSyBfbuqgmwifzgMtdLK9rf4DV0grGTzEXtQ</string>
     <string name="text_translation">Hi and welcome to codingdemos,
         here you will learn how to develop android app. Thank you for watching</string>
+    <string name="english">English</string>
+    <string name="khmer">Khmer</string>
+    <string name="viewmap">View on map</string>
 
     <string-array name="language_option">
         <item>English</item>
