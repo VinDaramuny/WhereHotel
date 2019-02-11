@@ -174,13 +174,7 @@ public class HotelListActivity extends AppCompatActivity implements NavigationVi
         Resources resources;
         switch (item.getItemId())
         {
-            case R.id.setting:
-                context = LocaleHelper.setLocale(HotelListActivity.this, "km");
-                resources = context.getResources();
-               // mapButton.setText(resources.getString(R.string.viewmap)); error
-                mTextView.setText(resources.getString(R.string.text_translation));
-                drawerLayout.closeDrawers();
-                return true;
+
             case R.id.logout:
                 firebaseAuth.getInstance().signOut();
                 loginManager.getInstance().logOut();

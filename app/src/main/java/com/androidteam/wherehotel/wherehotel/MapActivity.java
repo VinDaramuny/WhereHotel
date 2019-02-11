@@ -60,6 +60,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Intent getHotel = getIntent();
         hotelName = getHotel.getStringExtra("name");
         hotelLocation = getHotel.getStringExtra("location");
+
         tmp = getHotel.getStringExtra("latlong");
         latlng = tmp.split(",");
 
