@@ -16,6 +16,7 @@
     <string name="english">English</string>
     <string name="khmer">Khmer</string>
     <string name="viewmap">View on map</string>
+    <string name="logout">Log out</string>
 
     <string-array name="language_option">
         <item>English</item>

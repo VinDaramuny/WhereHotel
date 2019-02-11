@@ -14,6 +14,7 @@
     <string name="english">អង់គ្លេស</string>
     <string name="khmer">ខ្មែរ</string>
     <string name="viewmap">មើលនៅលើផែនទី</string>
+    <string name="logout">ចាកចេញ</string>
     <string-array name="language_option">
         <item>English</item>
         <item>Khmer</item>

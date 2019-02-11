@@ -34,7 +34,7 @@
                         android:layout_height="90dp"
                         android:layout_marginTop="15dp"
                         android:paddingRight="5dp"
-                        android:src="@drawable/hotel_sample"
+                        android:src="@mipmap/hotel_sample"
                          />
 
                     <TextView
@@ -82,6 +82,7 @@
                         android:layout_below="@id/textViewRating"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginBottom="3dp"
                         android:layout_toRightOf="@id/imageViewImg"
                         android:textColor="#FF0000"
                         android:text="KHR 00.000"
