@@ -46,7 +46,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private String[] latlng;
     private double latitude;
     private double longtitude;
-    Hotel hotel;
+    private String hotelName;
+    private String hotelLocation;
+
     String tmp;
 
     @Override
@@ -56,14 +58,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         Intent getHotel = getIntent();
-
+        hotelName = getHotel.getStringExtra("name");
+        hotelLocation = getHotel.getStringExtra("location");
         tmp = getHotel.getStringExtra("latlong");
         latlng = tmp.split(",");
 
         latitude = Double.parseDouble(latlng[0]);
         longtitude = Double.parseDouble(latlng[1]);
         //hotel = (Hotel)getHotel.getSerializableExtra("test");
-        Log.d("OPENIT",hotel.getHotelName());
+        //Log.d("OPENIT",hotel.getHotelName());
 
 
 
@@ -117,7 +120,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         this.googleMap = googleMap;
         LatLng location = new LatLng(latitude, longtitude);
 
-        googleMap.addMarker(new MarkerOptions().position(location).snippet("TEXT BELLOW TITLE").title("TITLE")).showInfoWindow();
+        googleMap.addMarker(new MarkerOptions().position(location).snippet(hotelLocation).title(hotelName)).showInfoWindow();
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
